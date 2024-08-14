@@ -9,7 +9,6 @@ function createTbl($result, $category, $FID)
 
 
         while ($films = $stmt->fetch()) {
-            print_r($films['FID_Film']);
 
             $sql2 = 'SELECT name, date, country, director from film WHERE ID_FILM = :id';
             $stmt2 = $pdo->prepare($sql2);
@@ -26,7 +25,6 @@ function createTbl($result, $category, $FID)
 
 function filterByDate($from, $to)
 {
-    echo (`$_GET[$to]   $_GET[$from]`);
     require 'pdo.php';
 
     if (isset($_GET[$to]) && isset($_GET[$from])) {
